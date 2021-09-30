@@ -24,6 +24,7 @@ public class Demo {
 		driver.navigate().forward();
 
 		driver.get("https://www.dropbox.com/login");
+		System.out.println(driver.getTitle());
 		//			driver.manage().timeouts().implicitlyWait(7, TimeUnit.SECONDS);
 		//close current browser / or focused window
 		//			driver.close();
