@@ -3,6 +3,7 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 //import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 public class Demo {
@@ -14,8 +15,8 @@ public class Demo {
 		// write your selenium code here 
 
 		//create driver object (chrome browser current) change to firefox(gecko) or IE as applicable
-		WebDriver driver = new FirefoxDriver();
-		System.setProperty("WebDriver.gecko.driver", "~/Downloads/webdriver/geckodriver.exe");
+		WebDriver driver = new ChromeDriver();
+		System.setProperty("WebDriver.chrome.driver", "~/Downloads/webdriver/chromedriver.exe");
 //		driver.get("https://google.com");
 //
 //		System.out.println(driver.getTitle()); 
@@ -45,8 +46,7 @@ public class Demo {
 		
 		driver.findElement(By.id("username")).sendKeys("test");
 		driver.findElement(By.id("password")).sendKeys("pass");
-		driver.manage().timeouts().implicitlyWait(7, TimeUnit.SECONDS);
-		driver.close();
+		driver.findElement(By.xpath("//*[@id=\"Login\"]")).click();
 		// close all browsers open by selenium / use when dealing with child windows
 //				driver.quit();
 	}
